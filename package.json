@@ -1,0 +1,55 @@
+{
+  "name": "game-ai-ts",
+  "version": "1.0.0",
+  "description": "Game AI library using Typescript",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "build:publish": "npm run build && np",
+    "ts-local-unit-test": "./node_modules/.bin/mocha -r ts-node/register tests/goap/*.test.ts",
+    "ts-local-integration-test": "AWS_XRAY_CONTEXT_MISSING=LOG_ERROR ./node_modules/.bin/mocha -r ts-node/register tests/integration/entrypoint.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielDCelery/game-ai-ts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GabrielDCelery/game-ai-ts/issues"
+  },
+  "homepage": "https://github.com/GabrielDCelery/game-ai-ts#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.10",
+    "@types/chai-as-promised": "^7.1.2",
+    "@types/lodash": "^4.14.149",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.7.0",
+    "@types/sinon": "^7.5.2",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-formatter-friendly": "^7.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-unicorn": "^16.0.0",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
+    "lodash": "^4.17.15",
+    "mocha": "^7.1.0",
+    "np": "^6.2.0",
+    "prettier": "^1.19.1",
+    "sinon": "^9.0.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {
+    "fastpriorityqueue": "^0.6.3"
+  }
+}
