@@ -40,6 +40,7 @@ class ReloadWeaponAction implements IGoapAction<IGoapState> {
 
   effect(state: IGoapState): IGoapState {
     state.player.bullets += 6;
+    state.player.clips -= 1;
     return state;
   }
 
@@ -183,8 +184,6 @@ describe('gather wood test', () => {
     // When
     const result = goapPlanner.createPlan(gameState);
 
-    console.log(JSON.stringify(result));
-
     // Then
     expect(result).to.deep.equal({
       totalCost: 7,
@@ -212,7 +211,7 @@ describe('gather wood test', () => {
             player: {
               weaponEquipped: true,
               bullets: 6,
-              clips: 1,
+              clips: 0,
             },
             enemy: {
               visible: false,
@@ -227,7 +226,7 @@ describe('gather wood test', () => {
             player: {
               weaponEquipped: true,
               bullets: 6,
-              clips: 1,
+              clips: 0,
             },
             enemy: {
               visible: true,
@@ -242,7 +241,7 @@ describe('gather wood test', () => {
             player: {
               weaponEquipped: true,
               bullets: 5,
-              clips: 1,
+              clips: 0,
             },
             enemy: {
               visible: true,
